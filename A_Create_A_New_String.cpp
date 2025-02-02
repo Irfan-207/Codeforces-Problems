@@ -7,20 +7,10 @@ using namespace std;
 
 int main(){
     optimize();
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        double a , b , c;
-        cin >> a >> b >> c;
+    string S , t;
+    getline(cin , S);
+    getline(cin , t);
 
-        double res = (a + b + c) / 3;
-        res = ceil(res);
-        cout << res << endl;
-    }
-    
-
-
-    
+    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
     return 0;
 }

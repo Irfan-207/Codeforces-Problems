@@ -5,26 +5,30 @@
 #define ll long long 
 using namespace std;
 
-int main(){
+int main() {
     optimize();
     ll n , k;
     cin >> n >> k;
 
     vector<ll> num(n);
-    for (int i = 0; i < n; i++) {
+    for (auto i = 0; i < n; i++) {
         cin >> num[i];
     }
     sort(num.begin() , num.end());
+
     reverse(num.begin() , num.end());
-
-    ll sum = 0;
-    for (int i = 0; i < k; i++) {
-        sum += num[i];
+    if(k == 1){
+        cout << num[0] << endl;
+        return 0;
+    } else {
+        ll sum = 0;
+        for (auto i = 0; i < k; i++) {
+            if(num[i] < 0){
+                continue;
+            }
+            sum += num[i];
+        }
+        cout << sum << endl;
     }
-    
-    cout << sum << endl;
-
-
-    
     return 0;
 }
