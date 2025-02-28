@@ -7,11 +7,15 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
+    string S;
     getline(cin , S);
-    getline(cin , t);
-
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    int sum = 0;
+    for (int i = 0; i < S.length(); i++)
+    {
+        int digit = S[i] - '0';
+        sum += digit;
+    }
+    cout << sum << endl;
+    
     return 0;
 }

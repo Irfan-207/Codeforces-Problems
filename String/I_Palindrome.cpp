@@ -7,11 +7,22 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    string S;
+    getline(cin , S);
+
+    string str = S; 
+    reverse(str.begin() , str.end());
+    for (int i = 0; i < S.length(); i++)
+    {
+        if(S[i] != str[i]){
+            cout << "NO\n";
+            return 0;
+        }
+    }
+    cout << "YES\n";
+    
+    
+
     return 0;
 }

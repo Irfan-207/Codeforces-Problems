@@ -7,11 +7,16 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
+    int n;
+    cin >> n;
+    if(n % 2 == 0 && n>2){
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+
+
+    
     return 0;
 }

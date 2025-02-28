@@ -7,11 +7,14 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
+    string S , T;
     getline(cin , S);
-    getline(cin , t);
+    getline(cin , T);
+    cout << S.length() << " " << T.length() << endl << S+T << endl;
+    char str = S[0];
+    S[0] = T[0];
+    T[0] = str;
+    cout << S << " " << T << endl;
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
     return 0;
 }

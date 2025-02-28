@@ -7,11 +7,24 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
+    int n;
+    cin >> n;
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    while (n--)
+    {
+        string Str;
+        cin >> Str;
+
+        int len = Str.length();
+
+        Str[len - 2] = 'i';
+        Str.erase(len - 1);
+        cout << Str << endl;
+    }
+    
+
+
+
+    
     return 0;
 }

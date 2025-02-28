@@ -7,11 +7,14 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    string str;
+    cin >> str ;
+    char ch = toupper(str[0]);
+    str[0] = ch;
+    cout << str << endl;
+
+
+    
     return 0;
 }

@@ -7,11 +7,19 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
+    string S;
     getline(cin , S);
-    getline(cin , t);
+    int space = 0;
+    for (int i = 0; i < S.length(); i++)
+    {
+        if(S[i] == ' ' && isalpha(S[i+1])){
+            space++;
+        }
+    }
+    cout << space + 1 << endl;
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+
+
+    
     return 0;
 }

@@ -7,11 +7,23 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    int n ;
+    cin >> n;
+    if(n <= 0){
+        cout << "NO\n";
+        return 0;
+    }
+
+    double res = log2(n);
+    
+    if(floor(res) == res){
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+
+
+    
     return 0;
 }

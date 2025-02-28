@@ -7,11 +7,18 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
+    string S;
     getline(cin , S);
-    getline(cin , t);
+    ll len = S.length();
 
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+    for (int i = 0; i < len; i++)
+    {
+        if(S[i] == '\\'){
+           return 0;
+        } else {
+            cout << S[i];
+        }
+    }
+    
     return 0;
 }

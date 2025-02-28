@@ -7,11 +7,12 @@ using namespace std;
 
 int main(){
     optimize();
-    string S , t;
-    
-    getline(cin , S);
-    getline(cin , t);
-
-    cout << S.size() <<" " << t.size() << endl << S << " " << t;   
+     string x, y;
+    cin >> x >> y;
+    if (x < y) {
+        cout << x << endl;
+    } else {
+        cout << y << endl;
+    }
     return 0;
 }
