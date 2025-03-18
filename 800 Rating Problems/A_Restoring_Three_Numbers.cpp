@@ -21,21 +21,14 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    vector<int> num(4);
+    for (int i = 0; i < 4; i++) {
+     cin >> num[i];
     }
-    
-
-
-    
+   sort(num.begin(), num.end());
+   int c = num[3] - num[0];
+   int b = num[2] - c;
+   int a = num[1] - c;
+   cout << a << " " << b << " " << c << endl;
     return 0;
 }

@@ -20,22 +20,26 @@ using namespace std;
 
 int main(){
     optimize();
-
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    string pass;
+    cin >> pass;
+    int len = 0 , capital = 0 , small = 0 , digit = 0;
+    if(pass.length() >= 5){
+        len ++;
     }
-    
-
-
-    
+    for (int i = 0; i < pass.length(); i++)
+    {
+        if(isupper(pass[i])){
+            capital++;
+        } else if(islower(pass[i])){
+            small++;
+        }else if(pass[i] >='0' && pass[i] <= '9'){
+            digit++;
+        }
+    }
+    if(len && capital && small && digit){
+        cout << "Correct\n";
+    } else {
+        cout << "Too weak\n";
+    }
     return 0;
 }

@@ -20,22 +20,24 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
+
     while (t--)
     {
-        ll n ;
+        int n ;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<ll> num(n);
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        auto mn = *min_element(num.begin() , num.end());
+        ll sum = 0;
+        for(auto U : num){
+            ll x = U - mn;
+            sum += x;
+        }
+        cout << sum << endl;
     }
-    
-
-
-    
     return 0;
 }

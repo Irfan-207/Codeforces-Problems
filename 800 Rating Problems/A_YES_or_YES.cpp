@@ -25,17 +25,19 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        string str;
+        cin >> str;
+        for (int i = 0; i < str.length(); i++)
+        {
+            if(islower(str[i])){
+                str[i] = toupper(str[i]);
+            }
+        }
+        if(str == "YES"){
+            cout << "YES\n";
+        }else{
+            cout << "NO\n";
+        }
     }
-    
-
-
-    
     return 0;
 }

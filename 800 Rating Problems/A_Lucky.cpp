@@ -23,19 +23,24 @@ int main(){
 
     int t;
     cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
 
-        cout << res + minimum << endl;
+    while (t--) {
+        string str;
+        cin >> str;
+        int sum1 = 0 , sum2 = 0;
+        for (int i = 0; i <= 2; i++) {
+            int x = str[i] - '0';
+            sum1 += x;
+        }
+        for (int i = 3; i < str.length(); i++) {
+            int x = str[i] - '0';
+            sum2 += x;
+        }
+        if(sum1 == sum2){
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
     }
-    
-
-
-    
     return 0;
 }

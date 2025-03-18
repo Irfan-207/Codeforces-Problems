@@ -21,21 +21,25 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    int total = 0;
+    while (n--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        string str;
+        cin >> str;
+        if(str == "Tetrahedron"){
+            total += 4;
+        } else if(str == "Cube"){
+            total += 6;
+        } else if(str == "Octahedron"){
+            total += 8;
+        } else if(str == "Dodecahedron"){
+            total += 12;
+        } else if(str == "Icosahedron"){
+            total += 20;
+        }
     }
-    
-
-
-    
+    cout << total << endl;
     return 0;
 }

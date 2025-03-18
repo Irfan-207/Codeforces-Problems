@@ -25,13 +25,30 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+        vector<int> num(n);
+        map<int , int> mp;
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+            mp[num[i]]++;
+        }
+        vector<int> res;
+        bool exist = false;
+        for(auto U : mp){
+            if(U.second >= 3){
+                res.push_back(U.first);
+                exist = true;
+            }
+        }
+        sort(res.begin() , res.end());
+        reverse(res.begin() , res.end());
+        if(!exist){
+            cout << -1 << endl;
+        }else {
+            cout << res[0] << endl;
+        }
 
-        cout << res + minimum << endl;
     }
     
 

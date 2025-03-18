@@ -20,22 +20,30 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<int> num(n);
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        
+        sort(num.begin() , num.end());
+        bool possible = true;
+        for (int i = 0; i < n-1; i++) {
+            auto diff = abs(num[i] - num[i+1]);
+            if(!(diff <= 1)){
+                cout << "NO\n";
+                possible = false;
+                break;
+            }
+        }
+        if(possible){
+            cout << "YES\n";
+        }
     }
-    
-
-
-    
     return 0;
 }

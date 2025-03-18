@@ -21,21 +21,24 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
+    int n ;
+    cin >> n;
+    int first_fourth = 0;
+    int second_third = 0;
+    while (n--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        int x , y;
+        cin >> x >> y;
+        if((x > 0 && y >= 0) || (x > 0 && y <= 0)){
+            first_fourth++;
+        } else {
+            second_third++;
+        }
     }
-    
-
-
-    
+    if(!(second_third < 2 || first_fourth < 2)){
+        cout << "No\n";
+    } else {
+        cout << "Yes\n";
+    }
     return 0;
 }

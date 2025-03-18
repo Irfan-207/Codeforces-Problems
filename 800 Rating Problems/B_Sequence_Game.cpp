@@ -20,22 +20,33 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
+        ll n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<ll> num(n);
+        vector<ll> res;
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        res.push_back(num[0]);
+        for (int i = 1; i < n; i++)
+        {
+            // took help from TLE eliminators
+            if(num[i] >= num[i-1]){
+                res.push_back(num[i]);
+            }else {
+                res.push_back(num[i]);
+                res.push_back(num[i]);
+            }
+        }
+        cout << res.size() << endl;
+        for(auto U : res){
+            cout << U << " ";
+        }
+        cout << endl;
     }
-    
-
-
-    
     return 0;
 }

@@ -21,21 +21,18 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    int n;
+    cin >> n;
+    vector<int> ep(n);
+    for (int i = 0; i < n; i++) {
+        cin >> ep[i];
     }
-    
-
-
-    
+    sort(ep.begin() , ep.end());
+    for (int i = 0; i < n; i++) {
+        if(ep[i + 1] != ep[i] + 1){
+            cout << ep[i] + 1 << endl;
+            return 0;
+        }
+    }
     return 0;
 }

@@ -20,22 +20,25 @@ using namespace std;
 
 int main(){
     optimize();
+    // took help from a random coder "gvne"
+    int n , cnt = 0;
+    cin >> n;
+    int first ;
+    cin >> first;
+    int max = first;
+    int min = first;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    for (int i = 1; i < n; i++) {
+        cin >> first;
+        if(first > max){
+            cnt ++;
+            max = first;
+        }   
+        else if(first < min){
+            cnt ++;
+            min = first;
+        }   
     }
-    
-
-
-    
+    cout << cnt << endl;
     return 0;
 }

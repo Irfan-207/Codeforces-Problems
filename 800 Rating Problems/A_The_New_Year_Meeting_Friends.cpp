@@ -21,20 +21,15 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    vector<int> num(3);
+    for (int i = 0; i < 3; i++) {
+        cin >> num[i];
     }
-    
+    auto mx = max_element(num.begin() , num.end());
+    auto mi = min_element(num.begin() , num.end());
 
+    auto res = *(mx) - *(mi);
+    cout << res << endl;
 
     
     return 0;

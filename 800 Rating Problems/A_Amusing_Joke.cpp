@@ -21,21 +21,27 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+    string str1 , str2 , str3;
+    cin >> str1 >> str2 >> str3;
+    
+    int len1 = str1.length() , len2 = str2.length() , len3 = str3.length();
+    if(len1 + len2 != len3){
+        cout << "NO\n";
+    } else {
+    unordered_map<char, int> freq;
+    
+    for (char c : str1) freq[c]++;
+    for (char c : str2) freq[c]++;
+    for (char c : str3) freq[c]--;
 
-        cout << res + minimum << endl;
+    for (auto it : freq) {
+        if (it.second != 0) {
+            cout << "NO\n";
+            return 0;
+        }
     }
     
-
-
-    
+    cout << "YES\n";
+    }
     return 0;
 }

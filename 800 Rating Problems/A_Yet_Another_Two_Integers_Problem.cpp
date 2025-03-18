@@ -25,13 +25,19 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+        ll a , b;
+        cin >> a >> b;
+        if(a == b){
+            cout << 0 << endl;
+        }else {
+            int cnt = 0;
+            if(a > b){
+                a += 10;
+            } else {
 
-        cout << res + minimum << endl;
+            }
+        }
+
     }
     
 

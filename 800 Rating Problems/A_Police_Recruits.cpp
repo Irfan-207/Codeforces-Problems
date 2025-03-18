@@ -20,20 +20,20 @@ using namespace std;
 
 int main(){
     optimize();
-
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    ll n;
+    cin >> n;
+    vector<ll> num(n);
+    int pos = 0 , m1 = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> num[i];
+        if(num[i] == -1){
+            m1++;
+        }else{
+            pos++;
+        }
     }
     
+
 
 
     

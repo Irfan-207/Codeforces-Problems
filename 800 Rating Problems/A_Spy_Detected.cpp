@@ -20,22 +20,31 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<int> num(n);
+        map<int , int> mp;
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+            mp[num[i]]++;
+        }
+        int x;
+        for(auto ch : mp){
+            if(ch.second == 1){
+                x = ch.first;
+                break;
+            }
+        }
+        for(int i = 0; i < n; i++){
+            if(num[i] == x){
+                cout << i + 1 << endl;
+                break;
+            }
+        }
     }
-    
-
-
-    
     return 0;
 }

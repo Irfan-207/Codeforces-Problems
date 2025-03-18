@@ -20,22 +20,26 @@ using namespace std;
 
 int main(){
     optimize();
+    int row , col;
+    cin >> row >> col;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    for (int i = 1; i <= row; i++) {
+        for (int j = 1; j <= col; j++) {
+            if(i % 2 == 0){
+                if(i % 4 == 0 && j == 1){
+                    cout << "#";
+                }else {
+                    if(j == col && i % 4 != 0){
+                        cout << "#";
+                    }else {
+                        cout << ".";
+                    }
+                }
+            }else {
+                cout << "#";
+            }
+        }
+        cout << endl;
     }
-    
-
-
-    
     return 0;
 }

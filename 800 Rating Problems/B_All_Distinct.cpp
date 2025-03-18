@@ -25,17 +25,20 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        set<int> s;
+        for (int i = 0; i < n; i++) {
+            int x;
+            cin >> x;
+            s.insert(x);
+        }
+        int len = s.size();
+        int d = n - len;
+        if(d % 2 != 0){
+            len--;
+        }
+        cout << len << endl;
     }
-    
-
-
-    
     return 0;
 }

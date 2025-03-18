@@ -20,22 +20,27 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
-    while (t--)
-    {
-        ll n ;
+    while (t--) {
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<ll> num(n);
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        ll op = INT_MAX;
+        for (int i = 0; i < n - 1; i++)
+        {
+            if(num[i] <= num[i+1]){
+                ll diff = num[i+1] - num[i];
+                ll req_op = (diff / 2) + 1;
+                op = min(req_op , op);
+            } else {
+                op = 0;
+            }
+        }
+        cout << op << endl;
     }
-    
-
-
-    
     return 0;
 }

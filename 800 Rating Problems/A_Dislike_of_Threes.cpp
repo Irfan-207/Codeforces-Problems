@@ -20,22 +20,18 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    vector<int> num;
+    for (int i = 1; num.size() != 1000; i++) {
+        if (i % 3 != 0 && i % 10 != 3) {
+            num.push_back(i);
+        }
     }
-    
-
-
-    
+    while (t--){
+        int n;
+        cin >> n;
+        cout << num[n-1] << endl;
+    }
     return 0;
 }

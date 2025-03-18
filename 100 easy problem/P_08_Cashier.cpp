@@ -21,20 +21,27 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+    int n, l, a; 
+	cin >> n >> l >> a; 
+	
+	vector<pair<int, int>> customer_time(n); 
+	for (int i = 0; i < n; i++){
+        cin >> customer_time[i].first >> customer_time[i].second;  
+    } 
+	
+	
+	int current_minute = 0; 
+	int breaks = 0;
 
-        cout << res + minimum << endl;
-    }
-    
-
+	for (int i = 0; i < n; i++) {
+		if (customer_time[i].first >= current_minute + a) {
+			breaks += (customer_time[i].first - current_minute) / a;  
+		} 
+		current_minute = customer_time[i].first + customer_time[i].second;
+	}
+	
+	breaks += (l - current_minute) / a; 
+	cout << breaks << endl; 
 
     
     return 0;

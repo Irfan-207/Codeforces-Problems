@@ -20,22 +20,20 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    while (t--) {
+        map<int , int> mp;
+        for (int i = 1; i <= 3; i++) {
+            int x;
+            cin >> x;
+            mp[x]++;
+        }
+        for(auto& m : mp){
+            if(m.second == 1){
+                cout << m.first << endl;
+            }
+        }
     }
-    
-
-
-    
     return 0;
 }

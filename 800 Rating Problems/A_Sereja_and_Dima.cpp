@@ -21,32 +21,31 @@ using namespace std;
 int main(){
     optimize();
 
-    string str;
-    cin >> str;
-    // if(str.length() < 7){
-    //     cout << "NO\n";
-    // }else {
-        for (int i = 0; i <= (int)str.length()-8; i++)
-        {
-            bool zero = true , one = true;
-            for (int j = 0; j < 8; j++)
-            {
-                if(str[i+j] != '0'){
-                    zero = false;
-                }if(str[i+j] != '1'){
-                    one = false;
-                }
+    int n , sum1 = 0 , sum2 = 0;
+    cin >> n;
+    vector<int> num(n);
+    for (int i = 0; i < n; i++) {
+        cin >> num[i];
+    } 
+    bool s = true;
+    while (!num.empty()) {
+        if(num.front() > num.back()){
+            if(s){
+                sum1 += num.front();
+            }else {
+                sum2 += num.front();
             }
-            if(zero || one){
-                cout << "YES\n";
-                return 0;
+            num.erase(num.begin());
+        }else {
+            if(s){
+                sum1 += num.back();
+            }else {
+                sum2 += num.back();
             }
+            num.pop_back();
         }
-        cout << "NO\n";
-    // }
-    
-
-
-    
+        s = !s;
+    } 
+    cout << sum1 << " " << sum2 << endl;
     return 0;
 }

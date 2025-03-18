@@ -23,15 +23,27 @@ int main(){
 
     int t;
     cin >> t;
+
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        int n , m;
+        cin >> n >> m;
+        
+        string str1 , str2;
+        cin >> str1 >> str2;
+        bool found =  false;
+        for (int i = 0; i < 6; i++)
+        {
+            if(str1.find(str2) != string::npos){
+                cout << i << endl;
+                found = true ;
+                break;
+            }
+            str1 += str1;
+        }
+        if(!found){
+            cout << -1 << endl;
+        }
     }
     
 

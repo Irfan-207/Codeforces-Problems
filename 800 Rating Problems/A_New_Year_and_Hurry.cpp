@@ -21,21 +21,25 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
+    int problems , time_need , get_time = 5 , cnt = 0;
+    cin >> problems >> time_need;
+    int midnight = 1440;
+    vector<int> num;
+    for (int i = 1; i <= problems; i++)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        get_time *= i;
+        num.push_back(get_time);
+        get_time = 5;
     }
-    
-
-
-    
+    int initial_time = 1200 + time_need;
+    for (int i = 0; i < problems; i++)
+    {
+        initial_time += num[i] ;
+        if(initial_time <= 1440) {
+            cnt++;
+        } else {
+            break;
+        }
+    } cout << cnt << endl;
     return 0;
 }

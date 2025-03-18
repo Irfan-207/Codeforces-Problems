@@ -23,19 +23,18 @@ int main(){
 
     int t;
     cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    while (t--){
+        vector<int> num(3);
+        for (int i = 0; i < 3; i++) {
+            cin >> num[i];
+        }
+        sort(num.begin() , num.end());
+        int sum = num[0] + num[1];
+        if(sum == num[2]){
+            cout << "YES\n";
+        }else{
+            cout << "NO\n";
+        }
     }
-    
-
-
-    
     return 0;
 }

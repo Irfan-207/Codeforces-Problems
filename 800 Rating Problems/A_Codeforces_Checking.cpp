@@ -21,21 +21,19 @@ using namespace std;
 int main(){
     optimize();
 
+    string str = "codeforces";
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+        char c;
+        cin >> c;
 
-        cout << res + minimum << endl;
+        if(str.find(c) != string::npos){
+            cout << "YES\n";
+        }else {
+            cout << "NO\n";
+        }
     }
-    
-
-
-    
     return 0;
 }

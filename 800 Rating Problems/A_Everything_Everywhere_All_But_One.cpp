@@ -20,22 +20,29 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
+
     while (t--)
     {
-        ll n ;
+        int n , sum = 0;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+        vector<int> num(n);
+        map<int , int> mp;
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+            mp[num[i]]++;
+            sum += num[i];
+        }
+        bool found = false ;
+        if(sum % n == 0){
+            int avg = sum / n;
+            if(mp.find(avg) != mp.end()){
+                found = true;
+            }
+        }
 
-        cout << res + minimum << endl;
+        cout << ((found) ? "YES\n" : "NO\n");
     }
-    
-
-
-    
     return 0;
 }

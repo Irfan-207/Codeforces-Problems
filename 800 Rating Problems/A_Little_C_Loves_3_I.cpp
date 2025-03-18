@@ -21,21 +21,13 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+    ll n;
+    cin >> n;
 
-        cout << res + minimum << endl;
+    if(n % 3 == 0 || n % 3 == 1){
+        cout << 1 << " " << 1 << " " << n - 2 << endl;
+    } else{
+        cout << 1 << " " << 2  << " " << n - 3 << endl;
     }
-    
-
-
-    
     return 0;
 }

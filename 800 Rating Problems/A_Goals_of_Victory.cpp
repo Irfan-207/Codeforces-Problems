@@ -25,13 +25,16 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
+        int n;
         cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<int> num(n);
+        int sum = 0;
+        for (int i = 0; i < n-1; i++) {
+            cin >> num[i];
+            sum += num[i];
+        }
+        int res = (-1) * sum;
+        cout << res << endl;
     }
     
 

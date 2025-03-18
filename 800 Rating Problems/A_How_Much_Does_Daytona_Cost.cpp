@@ -25,13 +25,22 @@ int main(){
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+        int n , k;
+        cin >> n >> k;
+        vector<int> num(n);
 
-        cout << res + minimum << endl;
+        bool found = false;
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+            if(num[i] == k){
+                found = true;
+            }
+        }
+        if(found){
+            cout << "YES\n";
+        }else {
+            cout << "NO\n";
+        }
     }
     
 

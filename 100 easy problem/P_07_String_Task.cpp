@@ -21,21 +21,25 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    string str;
+    cin >> str;
+    for(int i = 0 ; i < str.length() ; i++){
+        if(isupper(str[i])){
+            str[i] = tolower(str[i]);
+        }
     }
-    
+    vector<char> vec;
+    for(auto ch : str){
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'y'){
+            continue;
+        }else {
+            vec.push_back('.');
+            vec.push_back(ch);
+        }
+    }
 
-
-    
+    for(auto U : vec){
+        cout << U;
+    }
     return 0;
 }

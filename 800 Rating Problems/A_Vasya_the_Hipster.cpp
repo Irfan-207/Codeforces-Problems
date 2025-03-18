@@ -20,22 +20,23 @@ using namespace std;
 
 int main(){
     optimize();
-
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    int red , blue , cnt = 0;
+    cin >> red >> blue;
+    int mx = max(red , blue);
+    int mi = min(red , blue);
+    int possible_pair;
+    
+    possible_pair = 0;
+    while (mi--) {
+        possible_pair ++;
+        mx --;
     }
-    
-
-
-    
+    if(mx == 1){
+        cout << possible_pair << " " << 0 << endl;
+    }else {
+        int remain_pair = mx / 2;
+        cout << possible_pair << " " << remain_pair << endl;
+        
+    }
     return 0;
 }

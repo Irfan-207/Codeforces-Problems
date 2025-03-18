@@ -20,22 +20,21 @@ using namespace std;
 
 int main(){
     optimize();
+    string str;
+    getline(cin , str);
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    vector<char> letter;
+    for(auto ch : str){
+        if(ch >= 'a' && ch <= 'z'){
+            letter.push_back(ch);
+        }
     }
-    
-
-
+    set<char> s(letter.begin() , letter.end());
+    if(s.empty()){
+        cout << 0 << endl;
+    } else {
+        cout << s.size() << endl;
+    }
     
     return 0;
 }

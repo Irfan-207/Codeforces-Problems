@@ -21,21 +21,27 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    int n , k;
+    cin >> n >> k;
+    vector<char> pass;
+    char ch = 'a';
+    for (int i = 0; i < k; i++) {
+        pass.push_back(ch);
+        ch++;
     }
-    
-
-
-    
+    int len = pass.size();
+    if(len != n){
+        for (int i = 0; len != n; i++) {
+            pass.push_back(pass[i]);
+            len ++;
+        }
+        for(auto U : pass){
+            cout << U;
+        }cout << endl;
+    } else {
+        for(auto U : pass){
+            cout << U;
+        }cout << endl;
+    }
     return 0;
 }

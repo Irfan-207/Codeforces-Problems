@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "sstream": "cpp",
+        "regex": "cpp",
+        "mutex": "cpp",
+        "random": "cpp",
+        "type_traits": "cpp",
+        "ratio": "cpp",
+        "iostream": "cpp"
+    }
+}

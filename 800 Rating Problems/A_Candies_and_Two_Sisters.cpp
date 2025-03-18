@@ -20,20 +20,21 @@ using namespace std;
 
 int main(){
     optimize();
-
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        ll x;
+        cin >> x;
+        ll res;
+        if(x % 2 == 0){
+            res = (x / 2) - 1;
+        }else {
+            res = x / 2;
+        } cout << res << endl;
     }
     
+
 
 
     

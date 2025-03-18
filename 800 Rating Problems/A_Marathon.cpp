@@ -19,23 +19,23 @@
 using namespace std;
 
 int main(){
-    optimize();
-
+    optimize(); 
     int t;
     cin >> t;
     while (t--)
     {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+        vector<ll> dis(4);
+        for (int i = 0; i < 4; i++) {
+            cin >> dis[i];
+        }
+        int cnt = 0;
+        int t_dis = dis[0];
+        for (int i = 1; i < 4; i++) {
+            if(t_dis < dis[i]){
+                cnt++;
+            }
+        }
+        cout << cnt << endl;
     }
-    
-
-
-    
     return 0;
 }

@@ -21,21 +21,24 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    string str;
+    cin >> str;
+    vector<int> rec;
+    map<char , int> mp;
+    for(auto ch : str){
+        if(ch == 'n' || ch == 'i' || ch == 't' || ch == 'e'){
+            mp[ch]++;
+        }
     }
+    mp['n'] = (mp['n'] - 1) / 2;  
+    mp['e'] /= 3;  
     
-
-
+    rec.push_back(mp['n']);
+    rec.push_back(mp['i']);
+    rec.push_back(mp['t']);
+    rec.push_back(mp['e']);
     
+    sort(rec.begin(), rec.end());
+    cout << rec[0] << endl;    
     return 0;
 }

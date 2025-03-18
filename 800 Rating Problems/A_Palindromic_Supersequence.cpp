@@ -13,7 +13,6 @@
 #define ff first
 #define ss second
 #define mod 1000000007
-
 // Debugging macro
 #define debug(x) cerr << #x << " = " << (x) << "\n";
 using namespace std;
@@ -21,21 +20,11 @@ using namespace std;
 int main(){
     optimize();
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
+    string str;
+    cin >> str;
 
-        cout << res + minimum << endl;
-    }
-    
-
-
-    
+    string temp = str;
+    reverse(temp.begin() , temp.end());
+    cout << str << temp << endl;
     return 0;
 }

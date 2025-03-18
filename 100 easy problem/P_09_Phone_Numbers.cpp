@@ -20,20 +20,28 @@ using namespace std;
 
 int main(){
     optimize();
+    int n;
+    cin >> n;
+    string str;
+    cin >> str;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n ;
-        cin >> n;
-        ll lim = 3;
-        auto minimum = min((n % 15) + 1 , lim);
-        auto res = (n / 15) * 3;
-
-        cout << res + minimum << endl;
+    int cnt = 0;
+    for(auto ch : str){
+        if(ch == '8'){
+            cnt ++;
+        }
     }
-    
+    if(str.length() < 11){
+        cout << 0 << endl;
+    } else {
+        if(cnt){
+            int res = n/11;
+            auto ans = min(res , cnt);
+            cout << ans << endl;
+        } else {
+            cout << 0 << endl;
+        }
+    }
 
 
     
