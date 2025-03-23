@@ -3,13 +3,12 @@
 #define optimize() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define endl '\n'
 #define ll long long 
-
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define rep0(i, n) for (int i = 0; i < n; i++)
+#define srt(x) sort(x.begin() , x.end()) //sort a vector
+#define rev(x) reverse(x.begin() , x.end()) // reverse a vector
+#define rev_srt(x) sort(x.begin() , x.end() , greater<int>()) // reverse sort
+#define test int t; cin >> t; for (int i = 1; i <= t; i++)
 #define pb push_back
 #define mp make_pair
-#define all(x) (x).begin(), (x).end()
-#define sz(x) ((int)(x).size())
 #define ff first
 #define ss second
 #define mod 1000000007
@@ -20,13 +19,12 @@ using namespace std;
 
 int main(){
     optimize();
-
-    ll t;
-    cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    int n;
+    cin >> n;
+    if(n == 1){
+        cout << 1 << endl;
+    } else {
+        cout << n - 1 << endl;
     }
     return 0;
 }

@@ -21,12 +21,21 @@ using namespace std;
 int main(){
     optimize();
 
-    ll t;
+    int t;
     cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    while (t--) {
+        ll n , k;
+        cin >> n >> k;
+        if(n % 2 == 0){
+            cout << "YES\n";
+        } else {
+            auto diff = n - k;
+            if(diff % 2 == 0){
+                cout << "YES\n";
+            } else {
+                cout << "NO\n";
+            }
+        }
     }
     return 0;
 }

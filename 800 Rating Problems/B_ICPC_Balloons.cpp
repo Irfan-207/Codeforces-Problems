@@ -20,13 +20,17 @@ using namespace std;
 
 int main(){
     optimize();
-
-    ll t;
+    int t;
     cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    while (t--) {
+        int n;
+        cin >> n;
+        string str ;
+        cin >> str;
+        set<char> st(str.begin() , str.end());
+        int first_solve = st.size() * 2;
+        int second_solve = n - st.size();
+        cout << first_solve + second_solve << endl;
     }
     return 0;
 }

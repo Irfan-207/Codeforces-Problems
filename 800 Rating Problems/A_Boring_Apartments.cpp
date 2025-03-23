@@ -18,15 +18,18 @@
 #define debug(x) cerr << #x << " = " << (x) << "\n";
 using namespace std;
 
+
 int main(){
     optimize();
-
-    ll t;
-    cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
-    }
+    // Took help from a tutorial
+    int t;
+	cin >> t;
+	while (t--) {
+		string str;
+		cin >> str;
+		int dig = str[0] - '0' - 1;
+		int len = str.size();
+		cout << dig * 10 + len * (len + 1) / 2 << endl;
+	}
     return 0;
 }

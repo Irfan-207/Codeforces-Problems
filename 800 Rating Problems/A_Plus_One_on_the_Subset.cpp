@@ -21,12 +21,18 @@ using namespace std;
 int main(){
     optimize();
 
-    ll t;
+    int t;
     cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<ll> num(n);
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        auto mx = max_element(num.begin() , num.end());
+        auto mn = min_element(num.begin() , num.end());
+        cout << (*mx) - (*mn) << endl;
     }
     return 0;
 }

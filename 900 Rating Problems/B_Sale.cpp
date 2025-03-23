@@ -20,13 +20,20 @@ using namespace std;
 
 int main(){
     optimize();
-
-    ll t;
-    cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    int n , can_carry;
+    cin >> n >> can_carry;
+    vector<int> st(n);
+    for (int i = 0; i < n; i++) {
+        int price ;
+        cin >> price;
+        if(price != 0){
+            st.push_back(price);
+        }
     }
+    sort(st.begin() , st.end());
+    int sum = accumulate(st.begin() , st.begin() + can_carry , 0);
+    sum = abs(sum);
+    cout << sum << endl;
+    
     return 0;
 }

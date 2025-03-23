@@ -20,13 +20,28 @@ using namespace std;
 
 int main(){
     optimize();
-
-    ll t;
+    int t;
     cin >> t;
-    while (t--){
-        ll a , b;
-        cin >> a >> b;
-        cout << (abs(a - b) + 9) / 10 << endl; 
+    while (t--) {
+        int n;
+        cin >> n;
+        string str;
+        cin >> str;
+        if(n != 5){
+            cout << "NO\n";
+            continue;
+        }
+        string sortedInput = str;
+        sort(sortedInput.begin(), sortedInput.end());
+        string target = "Timur";
+        sort(target.begin(), target.end());
+        if(sortedInput == target){
+            cout << "YES\n";
+        }
+        else{
+            cout << "NO\n";
+        }
+    
     }
     return 0;
 }
