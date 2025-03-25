@@ -19,12 +19,26 @@ using namespace std;
 
 int main(){
     optimize();
-    int n;
-    cin >> n;
-    if(n == 1){
-        cout << 1 << endl;
-    } else {
-        cout << n - 1 << endl;
+    test 
+    {
+        int n;
+        cin >> n;
+        vector<int> num(n);
+        for (int i = 0; i < n; i++) {
+            cin >> num[i];
+        }
+        set<int> st(num.begin() , num.end());
+        if(st.size() == 1){
+            cout << "NO\n";
+        } else {
+            srt(num);
+            swap(num[0] , num[n-1]);
+            swap(num[1] , num[n-1]);
+            cout << "YES\n";
+            for(auto U : num){
+                cout << U << " ";
+            } cout << endl;
+        }
     }
     return 0;
 }
